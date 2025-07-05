@@ -109,8 +109,8 @@ function App() {
         
         {/* Informations de contact en bas à gauche */}
         <div className="contact-info fade-in stagger-2">
-          <div>Phone: 15221546857</div>
-          <div>Email: eileenyuan0330@163.com</div>
+          <div>Phone: 0664823867</div>
+          <div>Email: quentinbourgois@gmail.com</div>
         </div>
       </section>
 
@@ -336,7 +336,7 @@ function App() {
                     <Mail className="h-6 w-6" />
                   </div>
                   <h3 className="font-light mb-3 tracking-wide uppercase text-sm">Email</h3>
-                  <p className="text-muted-foreground font-light">votre.email@example.com</p>
+                  <p className="text-muted-foreground font-light">quentinbourgois@gmail.com</p>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="p-4 text-muted-foreground mb-4">
@@ -350,7 +350,7 @@ function App() {
                     <Phone className="h-6 w-6" />
                   </div>
                   <h3 className="font-light mb-3 tracking-wide uppercase text-sm">Téléphone</h3>
-                  <p className="text-muted-foreground font-light">+33 X XX XX XX XX</p>
+                  <p className="text-muted-foreground font-light">+33 6 64 82 38 67</p>
                 </div>
               </div>
               <Separator className="my-12 bg-border" />
