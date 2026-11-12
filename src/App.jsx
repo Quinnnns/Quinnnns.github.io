@@ -8,8 +8,7 @@ import {
   FileText, 
   Wrench, 
   Mail, 
-  Linkedin, 
-  Phone,
+  Github,
   Download,
   ExternalLink,
   Settings,
@@ -18,9 +17,6 @@ import {
   Menu,
   X
 } from 'lucide-react'
-import productionLineImg from './assets/production-line.jpg'
-import leanManufacturingImg from './assets/lean-manufacturing.jpg'
-import industrialEngineeringImg from './assets/industrial-engineering.jpg'
 import './App.css'
 
 function App() {
@@ -109,7 +105,6 @@ function App() {
         
         {/* Informations de contact en bas à gauche */}
         <div className="contact-info fade-in stagger-2">
-          <div>Phone: 0664823867</div>
           <div>Email: quentinbourgois@gmail.com</div>
         </div>
       </section>
@@ -172,24 +167,19 @@ function App() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "Lean Six Sigma Black Belt",
-                description: "Certification validant ma capacité à diriger des projets d'amélioration complexes et à utiliser des outils statistiques avancés pour l'optimisation des processus.",
+                title: "Lean Six Sigma White Belt",
+                description: "Fondamentaux du Lean Six Sigma : vocabulaire, philosophie d'amélioration continue et rôle de chacun dans un projet d'optimisation.",
                 icon: <Award className="h-5 w-5" />
               },
               {
-                title: "Project Management Professional (PMP)",
-                description: "Certification PMI confirmant ma compétence à gérer des projets de manière efficace, couvrant les cinq groupes de processus et dix domaines de connaissances.",
-                icon: <Settings className="h-5 w-5" />
+                title: "Lean Six Sigma Yellow Belt",
+                description: "Participation à des projets d'amélioration : cartographie des processus, outils de base de résolution de problèmes et identification des gaspillages.",
+                icon: <Award className="h-5 w-5" />
               },
               {
-                title: "Certified Supply Chain Professional (CSCP)",
-                description: "Certification ASCM attestant de ma compréhension globale de la gestion de la chaîne d'approvisionnement, de la planification stratégique à la logistique.",
-                icon: <BarChart3 className="h-5 w-5" />
-              },
-              {
-                title: "ISO 9001 Lead Auditor",
-                description: "Qualification pour auditer les systèmes de management de la qualité selon la norme ISO 9001, garantissant la conformité et l'amélioration continue.",
-                icon: <Cog className="h-5 w-5" />
+                title: "Lean Six Sigma Green Belt",
+                description: "Conduite de projets d'amélioration selon la démarche DMAIC, avec outils statistiques pour mesurer, analyser et stabiliser les gains.",
+                icon: <Award className="h-5 w-5" />
               }
             ].map((cert, index) => (
               <Card key={index} className={`minimal-card fade-in stagger-${index + 1}`}>
@@ -210,6 +200,25 @@ function App() {
               </Card>
             ))}
           </div>
+          <h3 className="font-light tracking-wide uppercase text-sm text-center mt-16 mb-8 text-muted-foreground">En préparation</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { title: "Black Belt Lean – CESI Certification", description: "Pilotage d'ateliers d'amélioration complexes, selon NF X06-091, ISO 13053 et ISO 18404. Certification enregistrée au Répertoire spécifique de France Compétences (RS7230)." },
+              { title: "ISO 9001 Lead Auditor", description: "Audit des systèmes de management de la qualité." },
+              { title: "Cloud – niveau fondamental", description: "Bases du cloud, utiles pour mes projets SaaS et d'IA industrielle." },
+              { title: "ISA/IEC 62443", description: "Cybersécurité des systèmes d'automatisation et de contrôle industriels." }
+            ].map((c, i) => (
+              <Card key={i} className="minimal-card">
+                <CardHeader>
+                  <Badge className="minimal-badge w-fit mb-3">En préparation</Badge>
+                  <CardTitle className="text-xl font-light">{c.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground font-light leading-relaxed">{c.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -222,20 +231,24 @@ function App() {
           <div className="space-y-6">
             {[
               {
-                title: "L'Impact de l'Industrie 4.0 sur l'Optimisation de la Chaîne d'Approvisionnement",
-                description: "Analyse des technologies IoT, IA et Big Data dans la transformation de la gestion logistique moderne."
+                title: "Copilotes IA en environnement industriel",
+                description: "Fiabilité, garde-fous et validation humaine : ce qu'un copilote IA peut et ne doit pas faire à côté d'une ligne, d'un MES ou d'un jumeau numérique.",
+                pdf: "/whitepapers/copilotes-ia-industrie.pdf"
               },
               {
-                title: "Méthodologies Lean et Six Sigma : Synergies pour l'Excellence Opérationnelle",
-                description: "Exploration de la complémentarité des approches Lean et Six Sigma avec un cadre intégré de mise en œuvre."
+                title: "Company brain : la connaissance de l'entreprise comme infrastructure",
+                description: "Capitaliser, structurer et interroger le savoir d'une organisation (procédures, retours d'expérience, décisions) avec RAG et graphes de connaissances.",
+                pdf: "/whitepapers/company-brain.pdf"
               },
               {
-                title: "La Maintenance Prédictive dans les Environnements de Production",
-                description: "Application des technologies de maintenance prédictive et stratégies de déploiement en milieu industriel."
+                title: "Second cerveau : méthode et architecture",
+                description: "Notes, tâches et mémoire d'agents : comment organiser une base de connaissances personnelle durable, de la capture à l'action.",
+                pdf: "/whitepapers/second-cerveau.pdf"
               },
               {
-                title: "L'Ergonomie au Poste de Travail : Un Levier de Performance et de Bien-être",
-                description: "Impact des facteurs ergonomiques sur la productivité et la santé des employés en environnement industriel."
+                title: "Automatisation d'ateliers et de processus",
+                description: "Où automatiser, dans quel ordre et avec quels contrôles : une approche Lean de l'automatisation, des tâches administratives jusqu'au poste de travail.",
+                pdf: "/whitepapers/automatisation-ateliers-processus.pdf"
               }
             ].map((paper, index) => (
               <Card key={index} className={`minimal-card fade-in stagger-${index + 1}`}>
@@ -247,14 +260,17 @@ function App() {
                         {paper.description}
                       </CardDescription>
                     </div>
-                    <div className="flex gap-3 ml-6">
-                      <Button size="sm" className="minimal-button text-xs">
-                        <Download className="h-3 w-3 mr-2" />
-                        PDF
-                      </Button>
-                      <Button size="sm" className="minimal-button text-xs">
-                        <ExternalLink className="h-3 w-3" />
-                      </Button>
+                    <div className="ml-6">
+                      {paper.pdf ? (
+                        <a href={paper.pdf} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" className="minimal-button text-xs">
+                            <Download className="h-3 w-3 mr-2" />
+                            PDF
+                          </Button>
+                        </a>
+                      ) : (
+                        <Badge className="minimal-badge">En rédaction</Badge>
+                      )}
                     </div>
                   </div>
                 </CardHeader>
@@ -273,34 +289,57 @@ function App() {
           <div className="grid lg:grid-cols-2 gap-12">
             {[
               {
-                title: "Optimisation du Flux de Production",
-                description: "Réduction des temps de cycle et des goulots d'étranglement sur une ligne d'assemblage de composants électroniques. Augmentation de 25% de la productivité et réduction de 15% des défauts.",
-                skills: ["VSM", "Simulation", "Lean Manufacturing"],
-                image: productionLineImg
+                title: "MirrorLine – jumeau numérique industriel avec copilote IA",
+                description: "Plateforme SaaS de jumeau numérique pour l'industrie, associée à un copilote IA d'aide à l'analyse et à la décision.",
+                status: "En développement",
+                skills: ["TypeScript", "Digital Twin", "IA"]
               },
               {
-                title: "Système de Gestion des Stocks Intelligent",
-                description: "Développement d'un prototype de système de gestion des stocks basé sur des algorithmes prédictifs pour PME. Optimisation des recommandations d'approvisionnement.",
-                skills: ["Python", "Modélisation prédictive", "Analyse de données"],
-                image: leanManufacturingImg
+                title: "Finnote",
+                description: "Application web pour apprendre et réviser : le parcours de révision se fait directement dans le site.",
+                status: "En ligne",
+                link: "https://finnote.app",
+                skills: ["Web", "Apprentissage", "Produit"]
               },
               {
-                title: "Amélioration de l'Efficacité Énergétique",
-                description: "Analyse approfondie de la consommation énergétique d'un site de production. Estimation d'une réduction de 10% de la consommation annuelle et diminution de l'empreinte carbone.",
-                skills: ["Audit énergétique", "Modélisation", "Développement durable"],
-                image: industrialEngineeringImg
+                title: "Second cerveau",
+                description: "Base de connaissances Obsidian couplée à un agent IA : capture, liste de tâches centralisée et journal de projets vérifiable.",
+                status: "Usage quotidien",
+                skills: ["Obsidian", "Agents IA", "Gestion des connaissances"]
+              },
+              {
+                title: "Homelab",
+                description: "Services auto-hébergés pour mon usage : bibliothèque Calibre-Web partagée avec Nextcloud, lecture multi-appareils.",
+                status: "Usage quotidien",
+                skills: ["Auto-hébergement", "Nextcloud", "Calibre-Web"]
+              },
+              {
+                title: "Trading algorithmique (recherche)",
+                description: "Cadre de validation stricte de stratégies, backtests puis paper trading via l'API IBKR. Projet de recherche : aucun capital réel engagé.",
+                status: "Paper trading en préparation",
+                skills: ["Python", "Backtesting", "IBKR"]
+              },
+              {
+                title: "CRM pour l'automobile",
+                description: "Idée de CRM dédié aux professionnels de l'automobile. Pas encore de développement : phase d'exploration du besoin.",
+                status: "Idée",
+                skills: ["CRM", "Produit", "Automobile"]
+              },
+              {
+                title: "Linux sur puce Apple M4",
+                description: "Idée d'étude de faisabilité autour de Linux sur Apple Silicon M4. Pas de travail engagé à ce stade.",
+                status: "Idée",
+                skills: ["Linux", "Apple Silicon", "Recherche"]
               }
             ].map((project, index) => (
               <Card key={index} className={`minimal-card overflow-hidden fade-in stagger-${index + 1}`}>
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover project-image"
-                  />
-                </div>
                 <CardHeader>
-                  <CardTitle className="text-xl font-light">{project.title}</CardTitle>
+                  <Badge className="minimal-badge w-fit mb-3">{project.status}</Badge>
+                  <CardTitle className="text-xl font-light">
+                    {project.link ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">{project.title} ↗</a>
+                    ) : project.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground font-light leading-relaxed mb-6">{project.description}</p>
@@ -330,7 +369,7 @@ function App() {
           </p>
           <Card className="minimal-card fade-in stagger-2">
             <CardContent className="p-12">
-              <div className="grid md:grid-cols-3 gap-12">
+              <div className="grid md:grid-cols-2 gap-12">
                 <div className="flex flex-col items-center">
                   <div className="p-4 text-muted-foreground mb-4">
                     <Mail className="h-6 w-6" />
@@ -340,17 +379,10 @@ function App() {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="p-4 text-muted-foreground mb-4">
-                    <Linkedin className="h-6 w-6" />
+                    <Github className="h-6 w-6" />
                   </div>
-                  <h3 className="font-light mb-3 tracking-wide uppercase text-sm">LinkedIn</h3>
-                  <p className="text-muted-foreground font-light">Votre profil LinkedIn</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="p-4 text-muted-foreground mb-4">
-                    <Phone className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-light mb-3 tracking-wide uppercase text-sm">Téléphone</h3>
-                  <p className="text-muted-foreground font-light">+33 6 64 82 38 67</p>
+                  <h3 className="font-light mb-3 tracking-wide uppercase text-sm">GitHub</h3>
+                  <a href="https://github.com/Quinnnns" target="_blank" rel="noopener noreferrer" className="text-muted-foreground font-light hover:underline">github.com/Quinnnns</a>
                 </div>
               </div>
               <Separator className="my-12 bg-border" />
